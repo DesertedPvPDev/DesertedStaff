@@ -9,6 +9,7 @@ public class DataManager {
 
     private List<Player> buildMode = new ArrayList<>();
     private List<Player> staffMode = new ArrayList<>();
+    private List<Player> staffChatToggled = new ArrayList<>();
 
     public List<Player> getBuildMode() {
         return buildMode;
@@ -34,4 +35,15 @@ public class DataManager {
         staffMode.remove(player);
     }
 
+    public void addStaffChat(Player player) {
+        staffChatToggled.add(player);
+    }
+
+    public void removeStaffChat(Player player) {
+        staffChatToggled.remove(player);
+    }
+
+    public boolean isStaffChatOn(Player p) {
+        return staffChatToggled.contains(p);
+    }
 }

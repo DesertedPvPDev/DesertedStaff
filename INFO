@@ -21,3 +21,18 @@ punishments:
 staff:
   hypestaff.staffonline
   List all online staff members
+
+staffchat
+  desertedpvp.staffchat
+  Toggle on/off staff chat
+
+s
+  desertedpvp.scquickmsg
+  Send a message to staff chat without toggleing it on
+
+#####################
+# Info: Extra Perms #
+# Format:           #
+# perm: description #
+#####################
+desertedpvp.seestaffchat: Allows a player to see messages sent to staff chat

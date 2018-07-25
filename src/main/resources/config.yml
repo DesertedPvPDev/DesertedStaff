@@ -40,5 +40,14 @@ notPlayer: '&cYou must be a player to execute this command'
 # This also disables crop trampling 
 enableBuildMode: true
 
+# Staff chat on
+staffCOn: '&bStaff chat has been toggled on.'
+
+# Staff chat off
+staffCOff: '&bStaff chat has been toggled off.'
+
+# Staff chat format
+staffFormat: '&8[&4Staff&8] %PLAYER%: %MSG%'
+
 # DO NOT EDIT. This is the config update system
 configVersion: '0.0.1'

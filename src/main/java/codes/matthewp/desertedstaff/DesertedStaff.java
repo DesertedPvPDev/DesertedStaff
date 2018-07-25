@@ -1,13 +1,11 @@
 package codes.matthewp.desertedstaff;
 
-import codes.matthewp.desertedstaff.cmd.BuildModeCmd;
-import codes.matthewp.desertedstaff.cmd.PunishmentCmd;
-import codes.matthewp.desertedstaff.cmd.StaffModeCmd;
-import codes.matthewp.desertedstaff.cmd.StaffOnlineCmd;
+import codes.matthewp.desertedstaff.cmd.*;
 import codes.matthewp.desertedstaff.data.DataManager;
 import codes.matthewp.desertedstaff.file.ConfigData;
 import codes.matthewp.desertedstaff.listeners.BlockBreakListener;
 import codes.matthewp.desertedstaff.listeners.BlockPlaceListener;
+import codes.matthewp.desertedstaff.listeners.ChatEvent;
 import codes.matthewp.desertedstaff.listeners.CropTrampleListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -53,6 +51,7 @@ public class DesertedStaff extends JavaPlugin {
             getServer().getPluginManager().registerEvents(new BlockBreakListener(this), this);
             getServer().getPluginManager().registerEvents(new BlockPlaceListener(this), this);
             getServer().getPluginManager().registerEvents(new CropTrampleListener(this), this);
+            getServer().getPluginManager().registerEvents(new ChatEvent(this), this);
         }
     }
 
@@ -65,5 +64,7 @@ public class DesertedStaff extends JavaPlugin {
         getCommand("staff").setExecutor(new StaffOnlineCmd(this));
         getCommand("staffmode").setExecutor(new StaffModeCmd(this));
         getCommand("punishments").setExecutor(new PunishmentCmd(this));
+        getCommand("staffchat").setExecutor(new StaffChatCmd(this));
+        getCommand("s").setExecutor(new QuickMessageCmd(this));
     }
 }

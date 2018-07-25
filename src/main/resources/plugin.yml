@@ -11,3 +11,7 @@ commands:
     description: Turn on/off build mode.
   punishments:
     description: View punishments.
+  staffchat:
+    desctiption: Toggle staff chat on/off
+  s:
+    description: Send a message to staff chat without it being toggled on
