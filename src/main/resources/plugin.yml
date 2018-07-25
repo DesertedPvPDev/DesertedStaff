@@ -1,0 +1,13 @@
+name: DesertedStaff
+version: 0.0.l
+main: codes.matthewp.desertedstaff.DesertedStaff
+
+commands:
+  staffmode:
+    description: Turn on/off staff mode.
+  staff:
+    description: See online staff members
+  buildmode:
+    description: Turn on/off build mode.
+  punishments:
+    description: View punishments.

@@ -1,0 +1,44 @@
+############################################
+#                                          #
+#                DesertedStaff                 #
+# Configuration for staff related commands #
+#                                          #
+############################################
+
+# Staff online message
+staffMsg: '&6The current staff member(s) online are: %STAFF%'
+
+# Permission required to be considered "staff" by /staff
+staffPerm: 'desertedstaff.staff'
+
+# The message sent when punishments are listed
+punishments:
+  - '&6Hacking: Ban 7d'
+  - '&6Hacking extended: Ban 30d'
+  - '&6Staff disrespect: Mute 1d'
+
+# Staff mode toggled on
+staffOn: '&bStaff mode has been enabled.'
+
+# Staff mode toggled off
+staffOff: '&bStaff mode has been disabled.'
+
+# Build mode toggled on
+buildOn: '&bBuild mode has been enabled.'
+
+# Build mode toggled off
+buildOff: '&bBuild mode has been disabled.'
+
+# No permission message
+noPermission: '&cYou do not have permission for this command'
+
+# Not a player message
+notPlayer: '&cYou must be a player to execute this command'
+
+# If true, build mode will be enabled. Placing/Destroying blocks
+# will be disabled unless the player is in build mode
+# This also disables crop trampling 
+enableBuildMode: true
+
+# DO NOT EDIT. This is the config update system
+configVersion: '0.0.1'

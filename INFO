@@ -1,0 +1,23 @@
+########################
+# Info: HypeStaff      #
+# Format:              #
+# commandName:         #
+#   permission: hy.asd #
+#   description: sdf   #
+########################
+
+buildmode:
+  hypestaff.buildmode
+  Turns on or off build mode
+
+staffmode:
+  hypestaff.staffmode
+  Turns on or off staff mode
+
+punishments:
+  hypestaff.punishments
+  Lists the configured punishments. Check config.
+
+staff:
+  hypestaff.staffonline
+  List all online staff members
