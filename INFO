@@ -7,19 +7,19 @@
 ########################
 
 buildmode:
-  hypestaff.buildmode
+  desertedstaff.buildmode
   Turns on or off build mode
 
 staffmode:
-  hypestaff.staffmode
+  desertedstaff.staffmode
   Turns on or off staff mode
 
 punishments:
-  hypestaff.punishments
+  desertedstaff.punishments
   Lists the configured punishments. Check config.
 
 staff:
-  hypestaff.staffonline
+  desertedstaff.staffonline
   List all online staff members
 
 staffchat
