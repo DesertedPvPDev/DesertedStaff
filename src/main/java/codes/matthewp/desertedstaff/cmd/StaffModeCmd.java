@@ -1,12 +1,17 @@
 package codes.matthewp.desertedstaff.cmd;
 
 import codes.matthewp.desertedstaff.DesertedStaff;
+import codes.matthewp.desertedstaff.util.ItemFactory;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class StaffModeCmd implements CommandExecutor {
 
@@ -26,11 +31,36 @@ public class StaffModeCmd implements CommandExecutor {
                         p.sendMessage(color(staff.getConfigData().getConfig().getString("staffOff")));
                         staff.getDataManager().removeStaffMode(p);
                         p.setGameMode(GameMode.SURVIVAL);
+
+                        for(Player player : Bukkit.getOnlinePlayers()) {
+                            if (!player.hasPermission("desertedstaff.staffmode")) {
+                                player.showPlayer(p);
+                            }
+                        }
+
                         return true;
                     } else {
                         p.sendMessage(color(staff.getConfigData().getConfig().getString("staffOn")));
                         staff.getDataManager().addStaffMode(p);
-                        p.setGameMode(GameMode.SPECTATOR);
+                        p.setGameMode(GameMode.SURVIVAL);
+                        p.setFlying(true);
+                        p.getInventory().clear();
+
+                        for(Player player : Bukkit.getOnlinePlayers()) {
+                            if(!player.hasPermission("desertedstaff.staffmode")) {
+                                player.hidePlayer(p);
+                            }
+                        }
+
+                        ItemStack tpCompass = new ItemFactory(Material.COMPASS)
+                                .setName("&6Teleport compass")
+                                .addLore("&2Use me to quickly teleport across the map.")
+                                .build();
+
+
+
+                        p.getInventory().setItem(0, tpCompass);
+
                         return true;
                     }
                 } else {
