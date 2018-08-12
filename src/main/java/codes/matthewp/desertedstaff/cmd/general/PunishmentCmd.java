@@ -1,4 +1,4 @@
-package codes.matthewp.desertedstaff.cmd;
+package codes.matthewp.desertedstaff.cmd.general;
 
 import codes.matthewp.desertedstaff.DesertedStaff;
 import org.bukkit.ChatColor;

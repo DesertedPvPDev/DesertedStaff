@@ -1,6 +1,11 @@
 package codes.matthewp.desertedstaff;
 
-import codes.matthewp.desertedstaff.cmd.*;
+import codes.matthewp.desertedstaff.cmd.chat.QuickMessageCmd;
+import codes.matthewp.desertedstaff.cmd.chat.StaffChatCmd;
+import codes.matthewp.desertedstaff.cmd.general.PunishmentCmd;
+import codes.matthewp.desertedstaff.cmd.general.StaffOnlineCmd;
+import codes.matthewp.desertedstaff.cmd.mode.BuildModeCmd;
+import codes.matthewp.desertedstaff.cmd.mode.StaffModeCmd;
 import codes.matthewp.desertedstaff.data.DataManager;
 import codes.matthewp.desertedstaff.file.ConfigData;
 import codes.matthewp.desertedstaff.listeners.BlockBreakListener;
