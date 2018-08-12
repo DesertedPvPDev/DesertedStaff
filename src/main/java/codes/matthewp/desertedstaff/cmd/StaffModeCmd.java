@@ -42,7 +42,10 @@ public class StaffModeCmd implements CommandExecutor {
                     } else {
                         p.sendMessage(color(staff.getConfigData().getConfig().getString("staffOn")));
                         staff.getDataManager().addStaffMode(p);
+
                         p.setGameMode(GameMode.SURVIVAL);
+
+                        p.setAllowFlight(true);
                         p.setFlying(true);
                         p.getInventory().clear();
 

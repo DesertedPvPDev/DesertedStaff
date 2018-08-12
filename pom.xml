@@ -19,8 +19,8 @@
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
-            <id>hypepvp</id>
-            <url>http://75.176.38.251:8081/repository/hypepvp/</url>
+            <id>maven-central</id>
+            <url>http://75.176.38.251:8081/repository/maven-central/</url>
         </repository>
     </repositories>
 
@@ -44,12 +44,12 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>hypepvp-snapshot</id>
-            <url>http://75.176.38.251:8081/repository/hypepvp-snapshot/</url>
+            <id>maven-snapshots</id>
+            <url>http://75.176.38.251:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
         <repository>
-            <id>hypepvp-release</id>
-            <url>http://75.176.38.251:8081/repository/hypepvp-release/</url>
+            <id>maven-releases</id>
+            <url>http://75.176.38.251:8081/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 
