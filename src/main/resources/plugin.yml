@@ -2,6 +2,8 @@ name: DesertedStaff
 version: 0.0.l
 main: codes.matthewp.desertedstaff.DesertedStaff
 
+depend: [DesertedCore]
+
 commands:
   staffmode:
     description: Turn on/off staff mode.
