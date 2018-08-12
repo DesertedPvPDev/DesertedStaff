@@ -12,7 +12,7 @@ buildmode:
 
 staffmode:
   desertedstaff.staffmode
-  Turns on or off staff mode
+  Turns on or off staff mode NOTE: This perm is neeeded to see players in staff mode
 
 punishments:
   desertedstaff.punishments
