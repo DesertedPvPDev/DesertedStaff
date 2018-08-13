@@ -3,6 +3,7 @@ package codes.matthewp.desertedstaff;
 import codes.matthewp.desertedcore.DesertedCore;
 import codes.matthewp.desertedcore.database.Database;
 import codes.matthewp.desertedstaff.cmd.ban.BanCmd;
+import codes.matthewp.desertedstaff.cmd.ban.UnbanCmd;
 import codes.matthewp.desertedstaff.cmd.chat.QuickMessageCmd;
 import codes.matthewp.desertedstaff.cmd.chat.StaffChatCmd;
 import codes.matthewp.desertedstaff.cmd.general.PunishmentCmd;
@@ -27,7 +28,7 @@ public class DesertedStaff extends JavaPlugin {
     private DataManager dataManager;
     private ConfigData configData;
 
-    public String currentConfigVersion = "0.0.2";
+    public String currentConfigVersion = "0.0.3";
 
     private boolean buildModeEnable = true;
 
@@ -70,6 +71,7 @@ public class DesertedStaff extends JavaPlugin {
         getCommand("staffchat").setExecutor(new StaffChatCmd(this));
         getCommand("s").setExecutor(new QuickMessageCmd(this));
         getCommand("ban").setExecutor(new BanCmd(this));
+        getCommand("unban").setExecutor(new UnbanCmd(this));
     }
 
     public DataManager getDataManager() {

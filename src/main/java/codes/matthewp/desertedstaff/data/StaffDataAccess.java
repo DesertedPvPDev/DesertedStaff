@@ -20,6 +20,37 @@ public class StaffDataAccess extends DatabaseAccess {
         ins = this;
     }
 
+    public void unbanPlayer(String uuid) {
+        String unban = "DELETE FROM `user_bans` WHERE `user_bans`.`uuid` = ?";
+        try {
+            Connection con = db.getConnection(this);
+            PreparedStatement statement = con.prepareStatement(unban);
+            statement.setString(1, uuid);
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public boolean isUUIDBanned(String uuid) {
+        String sqlQuery = "SELECT * FROM `user_bans` WHERE uuid = ?";
+        try {
+            Connection con = db.getConnection(this);
+            PreparedStatement statement = con.prepareStatement(sqlQuery);
+            statement.setString(1, uuid);
+            ResultSet set = statement.executeQuery();
+
+            if (!set.isBeforeFirst()) {
+                return false;
+            } else {
+                return true;
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return false;
+    }
+
     public boolean isBanned(Player p) {
         String sqlQuery = "SELECT * FROM `user_bans` WHERE uuid = ?";
         try {

@@ -84,5 +84,14 @@ staffBan: '&8[&cStaff&8] &7%STAFF% has banned %PLAYER%'
 # Player is already banned
 pBanned: '&cPlayer already banned'
 
+# Unban cmd usage
+unbanUsage: '&cInvalid usage. Please use: /unban <player>'
+
+# Player not banned
+notBanned: '&cThat player is not banned'
+
+# Unbanned a player
+unbannedPlayer: '&bYou have unbanned %PLAYER%'
+
 # DO NOT EDIT. This is the config update system
-configVersion: '0.0.2'
+configVersion: '0.0.3'

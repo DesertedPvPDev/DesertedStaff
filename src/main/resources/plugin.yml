@@ -19,3 +19,5 @@ commands:
     description: Send a message to staff chat without it being toggled on
   ban:
     description: Ban a player
+  unban:
+    description: Unban a player

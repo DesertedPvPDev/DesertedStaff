@@ -34,6 +34,10 @@ ban
   desertedstaff.ban
   Ban a player
 
+unban
+  desertedstaff.unban
+  Un ban a player
+
 #####################
 # Info: Extra Perms #
 # Format:           #
