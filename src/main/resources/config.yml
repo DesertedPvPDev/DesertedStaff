@@ -49,5 +49,40 @@ staffCOff: '&bStaff chat has been toggled off.'
 # Staff chat format
 staffFormat: '&8[&4Staff&8] %PLAYER%: %MSG%'
 
+# Ban usage
+banUsage: '&cInvalid usage. Use: /ban <player> <reason>'
+
+# Player not online
+notOnline: '&cThat player is not online'
+
+# Default ban message
+defaultBan: '&cBanned by administrator'
+
+# The ban format
+banFormat:
+  - "&cYou have been banned."
+  - "&7Reason: &6%REASON%"
+  - "&7Staff member: %STAFF%"
+  - "&7End: %END%"
+  - "%APPEAL%"
+
+# Perm ban
+banNeverEnd: '&cNEVER'
+
+# user may appeal
+yesAppeal: '&7You may appeal'
+
+# User may not appeal
+noAppeal: '&cYou not not appeal'
+
+# Banned player
+bannedPlayer: '&cYou have banned %PLAYER%'
+
+# Staff banned player
+staffBan: '&8[&cStaff&8] &7%STAFF% has banned %PLAYER%'
+
+# Player is already banned
+pBanned: '&cPlayer already banned'
+
 # DO NOT EDIT. This is the config update system
-configVersion: '0.0.1'
+configVersion: '0.0.2'

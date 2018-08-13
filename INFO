@@ -30,9 +30,14 @@ s
   desertedpvp.scquickmsg
   Send a message to staff chat without toggleing it on
 
+ban
+  desertedstaff.ban
+  Ban a player
+
 #####################
 # Info: Extra Perms #
 # Format:           #
 # perm: description #
 #####################
 desertedpvp.seestaffchat: Allows a player to see messages sent to staff chat
+desertedstaff.bannotif: Allows a player to see a user has been banned

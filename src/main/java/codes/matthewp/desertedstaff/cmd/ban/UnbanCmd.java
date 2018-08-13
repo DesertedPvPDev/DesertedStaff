@@ -1,4 +1,24 @@
 package codes.matthewp.desertedstaff.cmd.ban;
 
-public class UnbanCmd {
-}
+import codes.matthewp.desertedstaff.DesertedStaff;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+
+public class UnbanCmd implements CommandExecutor {
+
+    private DesertedStaff staff;
+
+    public UnbanCmd(DesertedStaff staff) {
+        this.staff = staff;
+    }
+
+    @Override
+    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+        if(s.equalsIgnoreCase("")) {
+            if(commandSender.hasPermission("")) {
+
+            }
+        }
+        return false;
+    }}
