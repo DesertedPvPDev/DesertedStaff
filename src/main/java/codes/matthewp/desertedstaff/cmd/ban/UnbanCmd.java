@@ -27,7 +27,7 @@ public class UnbanCmd implements CommandExecutor {
                     return false;
                 }
 
-                OfflinePlayer op = Bukkit.getOfflinePlayer(strings[1]);
+                OfflinePlayer op = Bukkit.getOfflinePlayer(strings[0]);
                 if (op.hasPlayedBefore()) {
                     UUID uuid = op.getUniqueId();
                     if(staff.getDataAccess().isUUIDBanned(uuid.toString())) {

@@ -89,8 +89,7 @@ public class StaffDataAccess extends DatabaseAccess {
                     statement.setString(4, String.valueOf(System.currentTimeMillis()));
                     statement.setString(5, staff);
                     statement.setString(6, appeal);
-                    statement.setString(6, "null");
-                    statement.setString(8, "true");
+                    statement.setString(7, "null");
 
                     statement.executeUpdate();
 
