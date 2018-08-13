@@ -45,7 +45,7 @@ public class BanCmd implements CommandExecutor {
                 if (strings.length == 1) {
                     reason = staff.getConfigData().getConfig().getString("defaultBan");
                 } else {
-                    for (int i = 0; i < strings.length; i++) {
+                    for (int i = 1; i < strings.length; i++) {
                         if (!strings[i].equalsIgnoreCase("#appeal")) {
                             builder.append(strings[i] + " ");
                         } else {
@@ -58,10 +58,12 @@ public class BanCmd implements CommandExecutor {
 
                 staff.getDataAccess().banPlayer(toBeBanned, reason, commandSender.getName(), appeal);
 
-                commandSender.sendMessage(ColorHelper.color(staff.getConfigData().getConfig().getString("bannedPlayer")));
+                commandSender.sendMessage(ColorHelper.color(staff.getConfigData().getConfig().getString("bannedPlayer")
+                        .replaceAll("%PLAYER%", toBeBanned.getName())));
                 for(Player p : Bukkit.getOnlinePlayers()) {
                     if(p.hasPermission("desertedstaff.bannotif")) {
-                        p.sendMessage(ColorHelper.color(staff.getConfigData().getConfig().getString("staffBan")));
+                        p.sendMessage(ColorHelper.color(staff.getConfigData().getConfig().getString("staffBan")
+                                .replaceAll("%STAFF%", commandSender.getName()).replaceAll("%PLAYER%", toBeBanned.getName())));
                     }
                 }
 
@@ -76,7 +78,7 @@ public class BanCmd implements CommandExecutor {
                     } else {
                         bit = bit.replaceAll("%APPEAL%", ColorHelper.color(staff.getConfigData().getConfig().getString("noAppeal")));
                     }
-                    kickBuilder.append(bit + "\n");
+                    kickBuilder.append(ColorHelper.color(bit + "\n"));
                 }
 
                 toBeBanned.kickPlayer(kickBuilder.toString());
