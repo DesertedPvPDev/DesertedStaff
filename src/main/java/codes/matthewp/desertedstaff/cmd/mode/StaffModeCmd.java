@@ -57,7 +57,7 @@ public class StaffModeCmd implements CommandExecutor {
 
                         ItemStack tpCompass = new ItemFactory(Material.COMPASS)
                                 .setName("&6Teleport compass")
-                                .addLore("&2Use me to quickly teleport across the map.")
+                                .addLore("&2Use me to quickly teleport across the map.").addLore("&cCurrently under development")
                                 .build();
 
 

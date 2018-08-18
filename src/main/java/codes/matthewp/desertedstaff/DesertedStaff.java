@@ -13,10 +13,7 @@ import codes.matthewp.desertedstaff.cmd.mode.StaffModeCmd;
 import codes.matthewp.desertedstaff.data.DataManager;
 import codes.matthewp.desertedstaff.data.StaffDataAccess;
 import codes.matthewp.desertedstaff.file.ConfigData;
-import codes.matthewp.desertedstaff.listeners.BlockBreakListener;
-import codes.matthewp.desertedstaff.listeners.BlockPlaceListener;
-import codes.matthewp.desertedstaff.listeners.ChatEvent;
-import codes.matthewp.desertedstaff.listeners.CropTrampleListener;
+import codes.matthewp.desertedstaff.listeners.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
@@ -42,6 +39,7 @@ public class DesertedStaff extends JavaPlugin {
         dataAccess = new StaffDataAccess(DesertedCore.getCore().getDB(), this);
         registerCommands();
         registerListeners();
+
         logger.info("DesertedStaff enabled.");
     }
 
@@ -57,6 +55,7 @@ public class DesertedStaff extends JavaPlugin {
             getServer().getPluginManager().registerEvents(new CropTrampleListener(this), this);
             getServer().getPluginManager().registerEvents(new ChatEvent(this), this);
         }
+      //  getServer().getPluginManager().registerEvents(new JoinEvent(this), this);
     }
 
     private void registerCommands() {
@@ -70,8 +69,8 @@ public class DesertedStaff extends JavaPlugin {
         getCommand("punishments").setExecutor(new PunishmentCmd(this));
         getCommand("staffchat").setExecutor(new StaffChatCmd(this));
         getCommand("s").setExecutor(new QuickMessageCmd(this));
-        getCommand("ban").setExecutor(new BanCmd(this));
-        getCommand("unban").setExecutor(new UnbanCmd(this));
+        //getCommand("ban").setExecutor(new BanCmd(this));
+       // getCommand("unban").setExecutor(new UnbanCmd(this));
     }
 
     public DataManager getDataManager() {

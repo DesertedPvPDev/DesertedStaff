@@ -32,7 +32,7 @@ public class ItemFactory {
     }
 
     public ItemFactory setName(String str) {
-        this.name = name;
+        this.name = str;
         return this;
     }
 

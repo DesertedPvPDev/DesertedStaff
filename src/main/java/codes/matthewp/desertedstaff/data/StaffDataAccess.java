@@ -20,6 +20,34 @@ public class StaffDataAccess extends DatabaseAccess {
         ins = this;
     }
 
+    public BanData getBan(String uuid) {
+        String sqlQuery = "SELECT * FROM `user_bans` WHERE uuid = ?";
+
+        try (Connection con = db.getConnection(this);
+             PreparedStatement statement = con.prepareStatement(sqlQuery);
+        ) {
+            statement.setString(1, uuid);
+            ResultSet set = statement.executeQuery();
+            if (!set.isBeforeFirst()) {
+                return null;
+            } else {
+                while (set.next()) {
+                    return new BanData(set.getString("uuid"),
+                            set.getString("staff"),
+                            set.getString("reason"),
+                            set.getString("start"),
+                            set.getString("end"),
+                            set.getString("ip"),
+                            set.getString("appeal"),
+                            set.getString("perm"));
+                }
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
     public void unbanPlayer(String uuid) {
         String unban = "DELETE FROM `user_bans` WHERE `user_bans`.`uuid` = ?";
         try {
@@ -93,7 +121,7 @@ public class StaffDataAccess extends DatabaseAccess {
 
                     statement.executeUpdate();
 
-                }catch (SQLException ex) {
+                } catch (SQLException ex) {
                     ex.printStackTrace();
                 }
             }
@@ -104,7 +132,8 @@ public class StaffDataAccess extends DatabaseAccess {
     public void loadTables() {
         setHasLoaded(true);
 
-        String bans = "CREATE TABLE IF NOT EXISTS `user_bans` ( `uuid` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, `reason` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, `start` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, `end` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, `staff` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, `appeal` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, `ip` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, `perm` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, PRIMARY KEY (`uuid`) ) ENGINE = InnoDB;";
+        //String bans = "CREATE TABLE IF NOT EXISTS `user_bans` ( `uuid` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, `reason` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, `start` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, `end` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, `staff` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, `appeal` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, `ip` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, `perm` VARCHAR(255) CHARACTER SET latin7 COLLATE latin7_bin, PRIMARY KEY (`uuid`) ) ENGINE = InnoDB;";
+        String bans = "CREATE TABLE IF NOT EXISTS `user_bans` ( `uuid` VARCHAR(191), `reason` VARCHAR(191), `start` VARCHAR(191), `end` VARCHAR(191), `staff` VARCHAR(191), `appeal` VARCHAR(191), `ip` VARCHAR(191), `perm` VARCHAR(191), PRIMARY KEY (`uuid`) ) ENGINE = InnoDB;";
         String blacklist = "";
         String mutes = "";
 
@@ -114,11 +143,11 @@ public class StaffDataAccess extends DatabaseAccess {
             Statement bansStmt = conn.createStatement();
             bansStmt.executeUpdate(bans);
 
-          //  Statement blackListStmt = conn.createStatement();
-          //  blackListStmt.executeUpdate(blacklist);
+            //  Statement blackListStmt = conn.createStatement();
+            //  blackListStmt.executeUpdate(blacklist);
 
-         //   Statement muteStmt = conn.createStatement();
-         //   muteStmt.executeUpdate(mutes);
+            //   Statement muteStmt = conn.createStatement();
+            //   muteStmt.executeUpdate(mutes);
 
         } catch (SQLException ex) {
             ex.printStackTrace();
