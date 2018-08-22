@@ -14,6 +14,7 @@ import codes.matthewp.desertedstaff.data.DataManager;
 import codes.matthewp.desertedstaff.data.StaffDataAccess;
 import codes.matthewp.desertedstaff.file.ConfigData;
 import codes.matthewp.desertedstaff.listeners.*;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
@@ -26,7 +27,7 @@ public class DesertedStaff extends JavaPlugin {
     private ConfigData configData;
 
     public String currentConfigVersion = "0.0.3";
-
+    public static boolean pvpEnabled = false;
     private boolean buildModeEnable = true;
 
     private StaffDataAccess dataAccess;
@@ -39,6 +40,10 @@ public class DesertedStaff extends JavaPlugin {
         dataAccess = new StaffDataAccess(DesertedCore.getCore().getDB(), this);
         registerCommands();
         registerListeners();
+
+        if(Bukkit.getServer().getPluginManager().isPluginEnabled("DesertedPvP")) {
+            pvpEnabled = true;
+        }
 
         logger.info("DesertedStaff enabled.");
     }

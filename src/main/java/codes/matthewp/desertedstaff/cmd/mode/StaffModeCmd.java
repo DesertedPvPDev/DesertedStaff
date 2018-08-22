@@ -1,5 +1,6 @@
 package codes.matthewp.desertedstaff.cmd.mode;
 
+import codes.matthewp.desertedpvp.DesertedPvP;
 import codes.matthewp.desertedstaff.DesertedStaff;
 import codes.matthewp.desertedstaff.util.ItemFactory;
 import org.bukkit.Bukkit;
@@ -36,6 +37,10 @@ public class StaffModeCmd implements CommandExecutor {
                             if (!player.hasPermission("desertedstaff.staffmode")) {
                                 player.showPlayer(p);
                             }
+                        }
+
+                        if(DesertedStaff.pvpEnabled) {
+                            DesertedPvP.getInstace().getUserManager().getUser(p).restPlayer();
                         }
 
                         return true;

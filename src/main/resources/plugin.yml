@@ -3,6 +3,7 @@ version: 0.0.l
 main: codes.matthewp.desertedstaff.DesertedStaff
 
 depend: [DesertedCore]
+softdepend: [DesertedPvP]
 
 commands:
   staffmode:

@@ -49,6 +49,14 @@
             <version>0.0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- Soft pvp plugin depend-->
+        <dependency>
+            <groupId>codes.matthewp.desertedpvp</groupId>
+            <artifactId>DesertedPvP</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <distributionManagement>
