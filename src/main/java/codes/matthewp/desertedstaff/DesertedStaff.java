@@ -1,9 +1,6 @@
 package codes.matthewp.desertedstaff;
 
 import codes.matthewp.desertedcore.DesertedCore;
-import codes.matthewp.desertedcore.database.Database;
-import codes.matthewp.desertedstaff.cmd.ban.BanCmd;
-import codes.matthewp.desertedstaff.cmd.ban.UnbanCmd;
 import codes.matthewp.desertedstaff.cmd.chat.QuickMessageCmd;
 import codes.matthewp.desertedstaff.cmd.chat.StaffChatCmd;
 import codes.matthewp.desertedstaff.cmd.general.PunishmentCmd;
@@ -58,9 +55,10 @@ public class DesertedStaff extends JavaPlugin {
             getServer().getPluginManager().registerEvents(new BlockBreakListener(this), this);
             getServer().getPluginManager().registerEvents(new BlockPlaceListener(this), this);
             getServer().getPluginManager().registerEvents(new CropTrampleListener(this), this);
-            getServer().getPluginManager().registerEvents(new ChatEvent(this), this);
         }
-      //  getServer().getPluginManager().registerEvents(new JoinEvent(this), this);
+        getServer().getPluginManager().registerEvents(new ChatEvent(this), this);
+        getServer().getPluginManager().registerEvents(new PreJoinEvent(this), this);
+        getServer().getPluginManager().registerEvents(new JoinEvent(this), this);
     }
 
     private void registerCommands() {
