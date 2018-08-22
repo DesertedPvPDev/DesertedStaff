@@ -1,6 +1,7 @@
 package codes.matthewp.desertedstaff.listeners;
 
 import codes.matthewp.desertedstaff.DesertedStaff;
+import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -17,8 +18,10 @@ public class CropTrampleListener implements Listener {
     @EventHandler
     public void onTrample(PlayerInteractEvent e) {
         if (e.getAction() == Action.PHYSICAL) {
-            if (!staff.getDataManager().getBuildMode().contains(e.getPlayer())) {
-                e.setCancelled(true);
+            if(e.getClickedBlock().getType() == Material.CROPS) {
+                if (!staff.getDataManager().getBuildMode().contains(e.getPlayer())) {
+                    e.setCancelled(true);
+                }
             }
         }
     }
