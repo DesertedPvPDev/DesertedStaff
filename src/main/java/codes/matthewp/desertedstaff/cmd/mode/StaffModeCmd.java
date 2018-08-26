@@ -12,7 +12,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 public class StaffModeCmd implements CommandExecutor {
 
@@ -32,14 +31,13 @@ public class StaffModeCmd implements CommandExecutor {
                         p.sendMessage(color(staff.getConfigData().getConfig().getString("staffOff")));
                         staff.getDataManager().removeStaffMode(p);
                         p.setGameMode(GameMode.SURVIVAL);
+                        p.setAllowFlight(false);
 
-                        for(Player player : Bukkit.getOnlinePlayers()) {
-                            if (!player.hasPermission("desertedstaff.staffmode")) {
-                                player.showPlayer(p);
-                            }
+                        for (Player player : Bukkit.getOnlinePlayers()) {
+                            player.showPlayer(p);
                         }
 
-                        if(DesertedStaff.pvpEnabled) {
+                        if (DesertedStaff.pvpEnabled) {
                             DesertedPvP.getInstace().getUserManager().getUser(p).restPlayer();
                         }
 
@@ -54,8 +52,8 @@ public class StaffModeCmd implements CommandExecutor {
                         p.setFlying(true);
                         p.getInventory().clear();
 
-                        for(Player player : Bukkit.getOnlinePlayers()) {
-                            if(!player.hasPermission("desertedstaff.staffmode")) {
+                        for (Player player : Bukkit.getOnlinePlayers()) {
+                            if (!player.hasPermission("desertedstaff.staffmode")) {
                                 player.hidePlayer(p);
                             }
                         }
@@ -64,7 +62,6 @@ public class StaffModeCmd implements CommandExecutor {
                                 .setName("&6Teleport compass")
                                 .addLore("&2Use me to quickly teleport across the map.").addLore("&cCurrently under development")
                                 .build();
-
 
 
                         p.getInventory().setItem(0, tpCompass);
