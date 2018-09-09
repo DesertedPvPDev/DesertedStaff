@@ -59,6 +59,7 @@ public class DesertedStaff extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ChatEvent(this), this);
         getServer().getPluginManager().registerEvents(new PreJoinEvent(this), this);
         getServer().getPluginManager().registerEvents(new JoinEvent(this), this);
+        getServer().getPluginManager().registerEvents(new QuitEvent(this), this);
     }
 
     private void registerCommands() {
