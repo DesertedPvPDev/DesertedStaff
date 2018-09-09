@@ -19,8 +19,8 @@
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
-            <id>maven-snapshot</id>
-            <url>http://75.176.38.251:8081/repository/maven-snapshot/</url>
+            <id>maven-snapshots</id>
+            <url>http://75.176.38.251:8081/repository/maven-snapshots/</url>
         </repository>
     </repositories>
 
